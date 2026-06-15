@@ -1,3 +1,4 @@
+import Course from "./Course";
 import Student from "./student";
 
 function App(){
@@ -6,6 +7,7 @@ function App(){
     <>
     <h1>hellow react</h1>
     <Student car="ferrari"/>
+    <Course />
    
     </>
   );
