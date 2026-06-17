@@ -1,13 +1,14 @@
 import Course from "./Course";
 import Student from "./student";
-
+import CRS from "./assets/CRS.png"
 function App(){
   return(
 
     <>
-    <h1>hellow react</h1>
-    <Student car="ferrari"/>
-    <Course />
+    
+    <Course image={CRS} name="python " price="500 $"/>
+    <Course  name="Java " price="200 $"/>
+    <Course image={CRS}  />
    
     </>
   );
