@@ -1,9 +1,13 @@
+import { useState } from "react";
 import CRS from "./assets/CRS.png";
 import Course from "./Course";
 
 function CourseList(){
 
-    const courses=[
+
+
+    
+    const [courses,setcourses]=useState([
             {
                 id:1,
                 image:CRS,
@@ -39,18 +43,29 @@ function CourseList(){
                 
             }
 
-        ]
+        ]);
+
+
+        function deleteCourse(id){
+        console.log(id);
+        const newcourses=courses.filter(course =>course.id !==id);
+        setcourses(newcourses);
+    }
+
 
         courses.sort((x,y)=> y.price-x.price);
 
        const filtercourse= courses.filter((course)=>course.price>300)
 
-    const courselist=filtercourse.map((course,index)=> 
-    <Course  key={index} 
+    const courselist=filtercourse.map((course)=> 
+    <Course  key={course.id} 
     image={course.image} 
     name={course.name} 
     price={course.price}
-   rating={course.rating} /> )
+   rating={course.rating} 
+   delete={ deleteCourse}
+   id={course.id}/> 
+)
 
     return(
 
