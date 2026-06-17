@@ -17,8 +17,7 @@ function Course(props){
 // Course.defaultProps={
 //     name:"HTML",
 //     price: "200 $",
-//     image: CRS
-    
+//     image: CRS  
 // }
 
 

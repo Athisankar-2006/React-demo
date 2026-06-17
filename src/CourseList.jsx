@@ -8,7 +8,7 @@ function CourseList(){
                 id:1,
                 image:CRS,
                  name:"python ",
-                  price:"500 $",
+                  price:780,
                   rating:5
                 
             },
@@ -17,7 +17,7 @@ function CourseList(){
                 id:2,
                 image:CRS,
                  name:"react ",
-                  price:"500 $",
+                  price:350,
                   rating:3
                 
             },
@@ -26,14 +26,14 @@ function CourseList(){
                 id:3,
                 image:CRS,
                  name:"java ",
-                  price:"500 $",
+                  price:400,
                   rating:5
             },
               {
                 id:4,
                 image:CRS,
                  name:"ml ",
-                  price:"200$",
+                  price:200,
                   rating:4
 
                 
@@ -41,7 +41,11 @@ function CourseList(){
 
         ]
 
-    const courselist=courses.map((course,index)=> 
+        courses.sort((x,y)=> y.price-x.price);
+
+       const filtercourse= courses.filter((course)=>course.price>300)
+
+    const courselist=filtercourse.map((course,index)=> 
     <Course  key={index} 
     image={course.image} 
     name={course.name} 
