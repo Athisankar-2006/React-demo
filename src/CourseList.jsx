@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import CRS from "./assets/CRS.png";
 import Course from "./Course";
 
@@ -45,6 +45,13 @@ function CourseList(){
 
         ]);
 
+
+        const [dummy,setDummy]=useState(true);
+
+        useEffect(()=>{
+            console.log('use effect called');
+            console.log(dummy);
+        })
 
         function deleteCourse(id){
         console.log(id);
