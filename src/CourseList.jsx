@@ -1,57 +1,12 @@
 import { useState,useEffect } from "react";
-import CRS from "./assets/CRS.png";
 import Course from "./Course";
+import useFetch from "./useFetch";
 
 function CourseList(){
-
-
-
     
-    const [courses,setcourses]=useState([
-            {
-                id:1,
-                image:CRS,
-                 name:"python ",
-                  price:780,
-                  rating:5
-                
-            },
+    const [courses,dummy,error]=useFetch('http://localhost:3000/courses')
 
-             {
-                id:2,
-                image:CRS,
-                 name:"react ",
-                  price:350,
-                  rating:3
-                
-            },
-
-             {
-                id:3,
-                image:CRS,
-                 name:"java ",
-                  price:400,
-                  rating:5
-            },
-              {
-                id:4,
-                image:CRS,
-                 name:"ml ",
-                  price:200,
-                  rating:4
-
-                
-            }
-
-        ]);
-
-
-        const [dummy,setDummy]=useState(true);
-
-        useEffect(()=>{
-            console.log('use effect called');
-            console.log(dummy);
-        })
+      
 
         function deleteCourse(id){
         console.log(id);
@@ -60,11 +15,20 @@ function CourseList(){
     }
 
 
-        courses.sort((x,y)=> y.price-x.price);
+        // courses.sort((x,y)=> y.price-x.price);
 
-       const filtercourse= courses.filter((course)=>course.price>300)
+    //    const filtercourse= courses.filter((course)=>course.price>300)
 
-    const courselist=filtercourse.map((course)=> 
+    if(!courses){
+       return <>
+       
+       {!error && <img src="data/assets/loading.gif"></img>}
+       {error && <p>{error}</p>}
+       
+       </>
+    }
+
+    const courselist=courses.map((course)=> 
     <Course  key={course.id} 
     image={course.image} 
     name={course.name} 
@@ -84,3 +48,4 @@ function CourseList(){
 
 
 export default CourseList;
+//npx json-server --watch data/dummyData.json --port 3000 --static ./data

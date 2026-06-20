@@ -1,0 +1,39 @@
+{
+    "courses": [
+        {
+                "id":1,
+                "image":".http://localhost:3000/assets/crs.png",
+                 "name":"python ",
+                  "price":780,
+                  "rating":5
+                
+            },
+
+             {
+                "id":2,
+                "image":"http://localhost:3000/assets/crs.png",
+                 "name":"react ",
+                  "price":350,
+                  "rating":3
+                
+            },
+
+             {
+                "id":3,
+                "image":"http://localhost:3000/assets/crs.png",
+                 "name":"java ",
+                  "price":400,
+                  "rating":5
+            },
+              {
+                "id":4,
+                "image":"http://localhost:3000/assets/crs.png",
+                 "name":"ml ",
+                  "price":200,
+                  "rating":4
+
+                
+            }
+
+    ]
+}
